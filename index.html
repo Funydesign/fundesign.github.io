@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>.9 图网页预览</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="app">
+  <div class="drop" id="drop">将 .9.png 拖拽到此处或点击选择</div>
+  <input type="file" id="file" accept="image/png" hidden>
+  <div class="controls">
+    <label>文本内容</label>
+    <textarea id="text" placeholder="在此输入文字"></textarea>
+    
+    <div class="row">
+      <label>文字颜色</label>
+      <input type="color" id="colorPicker" value="#222222">
+      <input type="text" id="colorHex" value="#222222" placeholder="#ffffff">
+      <label style="margin-left:12px">字号</label>
+      <input type="number" id="fontSize" value="32" min="8" max="72">
+    </div>
+  </div>
+  <div class="preview-wrap">
+    <div class="preview" id="preview">
+      <div class="content" id="content"></div>
+    </div>
+  </div>
+  <div class="meta" id="meta"></div>
+  <div class="debug-panel" id="debugPanel" style="display:none;">
+      <h3>Debug Info</h3>
+      <div id="debugContent"></div>
+  </div>
+  <canvas id="sourceCanvas" class="hide"></canvas>
+  <canvas id="renderCanvas" class="hide"></canvas>
+</div>
+<script src="app.js"></script>
+</body>
+</html>
